@@ -1,0 +1,35 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<section id="stats" class="stats stats-container">
+    <img src="{% static 'img/stats-bg.png' %}" alt="Stats Background" data-aos="fade-in">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 flex-nowrap justify-content-center">
+            <div class="col-lg-auto stats-item-wrapper">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="2700" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Clientes</p>
+                </div>
+            </div>
+            <div class="col-lg-auto stats-item-wrapper">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Anos de Tradição</p>
+                </div>
+            </div>
+            <div class="col-lg-auto stats-item-wrapper">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Colaboradores</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'js/institutional.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'css/institutional_counter.css' %}">

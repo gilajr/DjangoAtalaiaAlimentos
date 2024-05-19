@@ -1,0 +1,47 @@
+.post {
+    margin-top: 2rem;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.post .text-muted {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.post .badge {
+    margin-right: 0.5rem;
+}
+
+.post figure {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.post p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.card {
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 0;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.post-description {
+    text-align: justify;
+}

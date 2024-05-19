@@ -1,0 +1,109 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<div class="form-container justify-content-center" style="padding-left: 15%;">
+    <form class="form-horizontal" id="product-register-form" method="post" enctype="multipart/form-data" action="{% url 'product_maintenance' %}">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-5">Categoria do Produto:</label>
+            <div class="col-sm-8">
+              <select name="category" id="id_category" class="form-control">
+                {% for choice in new_product_form.category.field.choices %}
+                    <option value="{{ choice.0 }}" {% if choice.0 == new_product_form.category.value %} selected {% endif %}>{{ choice.1 }}</option>
+                {% endfor %}
+            </select>
+              {{ new_product_form.category.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Produto:</label>
+            <div class="col-sm-8">
+              <input type="text" name="{{ new_product_form.product.name }}" id="{{ new_product_form.product.id_for_label }}" value="{{ new_product_form.product.value }}" class="form-control">
+              {{ new_product_form.product.errors }} 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Descrição:</label>
+            <div class="col-sm-10">
+              <textarea name="{{ new_product_form.description.name }}" id="{{ new_product_form.description.id_for_label }}" class="form-control" rows="2">{{ new_product_form.description.value }}</textarea>
+              {{ new_product_form.description.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Imagem do Produto:</label>
+            <div class="col-sm-8">
+              {{ new_product_form.image }}
+              {{ new_product_form.image.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Peso:</label>
+            <div class="col-sm-8">
+              <input type="text" name="{{ new_product_form.weight.name }}" id="{{ new_product_form.weight.id_for_label }}" value="{{ new_product_form.weight.value }}" class="form-control">
+              {{ new_product_form.weight.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Unidade:</label>
+            <div class="col-sm-8">
+              <input type="text" name="{{ new_product_form.unit.name }}" id="{{ new_product_form.unit.id_for_label }}" value="{{ new_product_form.unit.value }}" class="form-control">
+              {{ new_product_form.unit.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Validade:</label>
+            <div class="col-sm-8">
+              <input type="text" name="{{ new_product_form.validity.name }}" id="{{ new_product_form.validity.id_for_label }}" value="{{ new_product_form.validity.value }}" class="form-control">
+              {{ new_product_form.validity.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Conservação:</label>
+            <div class="col-sm-8">
+              <input type="text" name="{{ new_product_form.conservation.name }}" id="{{ new_product_form.conservation.id_for_label }}" value="{{ new_product_form.conservation.value }}" class="form-control">
+              {{ new_product_form.conservation.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-6">Informações Nutricionais:</label>
+            <div class="col-sm-8">
+              {{ new_product_form.nutricional_informations_image }}
+              {{ new_product_form.nutricional_informations_image.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding-left: 35%; padding-top: 10%;">
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary rounded-3 text-center">Cadastrar Produto</button>
+        </div>
+      </div>
+    </form>
+  </div>

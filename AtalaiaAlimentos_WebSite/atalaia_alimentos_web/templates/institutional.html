@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+    {% include 'components/_institutional_header.html' %}
+    {% include 'components/_institutional_counter.html' %}
+    {% include 'components/_institutional_differences copy.html' %}
+    {% include 'components/_institutional_units.html' %}
+{% endblock %}

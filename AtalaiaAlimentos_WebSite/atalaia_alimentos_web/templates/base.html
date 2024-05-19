@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atalaia Alimentos - Saudável como a Vida deve ser.</title>
+    <link rel="icon" type="image/x-icon" href="https://www.atalaiaalimentos.ind.br/wp-content/uploads/2017/04/favicon-appel.png">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        /* Estilos CSS */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .privacy-alert-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 10px;
+            z-index: 9999;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .privacy-card {
+            width: 18rem;
+            text-align: center;
+        }
+        
+        .card-title {
+            margin-bottom: 10px;
+        }
+        
+        .card-text {
+            margin-bottom: 20px;
+        }
+        
+        .card-link {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .btn-green {
+            background-color: #28a745;
+            color: #ffffff; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background-color: #218838; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        {% include 'components/_navigation_2.html' %}
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+
+        {% if not request.COOKIES.terms_accepted %}
+        <div class="privacy-alert-container">
+            <div class="privacy-card">
+                <h5 class="card-title">Termos de Uso e Políticas de Privacidade</h5>
+                <p class="card-text">Ao navegar neste site, você aceita os cookies que usamos para melhorar sua experiência.</p>
+                <a href="{% url 'privacy' %}" class="card-link">Termos de Uso e Política de Privacidade</a>
+                <button id="accept-terms" class="btn btn-success">Aceitar</button>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    <footer>
+        {% include 'components/_footer_atalaia.html' %}
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var acceptTermsButton = document.getElementById('accept-terms');
+            if (acceptTermsButton) {
+                acceptTermsButton.addEventListener('click', function() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', '{% url 'accept_terms' %}', true);
+                    xhr.onload = function() {
+                        if (xhr.status >= 200 && xhr.status < 400) {
+                            var data = xhr.responseText;
+                            document.querySelector('.privacy-alert-container').style.display = 'none'; // Esconde o container de alerta após aceitar os termos
+                            // Configura o cookie para indicar que os termos foram aceitos
+                            document.cookie = "terms_accepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+                        } else {
+                            console.error('Erro ao aceitar os termos: ' + xhr.status);
+                        }
+                    };
+                    xhr.onerror = function() {
+                        console.error('Erro de rede ao aceitar os termos');
+                    };
+                    xhr.send();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<div class="form-container justify-content-center" style="padding-left: 15%;">
+    <form class="form-horizontal" id="recipe-edit-form" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-6">Título da Receita:</label>
+            <div class="col-sm-8">
+              <input type="text" name="recipe" id="recipe_title" value="{{ selected_recipe.title }}" class="form-control">
+              {{ new_recipe_form.title.errors }} 
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Tempo de Preparo:</label>
+            <div class="col-sm-8">
+              <input type="text" name="recipe_time" id="recipe-time" value="{{ selected_recipe.time }}" class="form-control">
+              {{ new_recipe_form.time.errors }} 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Rendimento:</label>
+            <div class="col-sm-8">
+              <input type="text" name="recipe_revenue" id="recipe-revenue" value="{{ selected_recipe.revenue }}" class="form-control">
+              {{ new_recipe_form.revenue.errors }} 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Descrição:</label>
+            <div class="col-sm-10">
+              <textarea name="recipe_description" id="recipe_description" class="form-control" rows="2">{{ selected_recipe.description }}</textarea>
+              {{ new_recipe_form.description.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Ingredientes:</label>
+            <div class="col-sm-8">
+              <textarea name="recipe_ingredients" id="recipe_ingredients" class="form-control" rows="2">{{ selected_recipe.ingedients }}</textarea>
+              {{ new_recipe_form.ingredients.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Modo de Preparo:</label>
+            <div class="col-sm-8">
+              <textarea name="recipe_preparation" id="recipe_preparation" class="form-control" rows="2">{{ selected_recipe.preparation }}</textarea>
+              {{ new_recipe_form.preparation.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Imagem da Receita:</label>
+            <div class="col-sm-8">
+              <input type="file" name="recipe_image" id="recipe_image" class="form-control">
+              {{ new_recipe_form.image.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding-top: 10%;">
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary rounded-3 text-center">Atualizar Receita</button>
+        </div>
+        <div class="col-6">
+          {% comment %} <a href="{% url 'product_delete' id=selected_product.id %}" class="btn btn-danger rounded-3 text-center">Excluir Produto</a> {% endcomment %}
+          <a href="#" class="btn btn-danger rounded-3 text-center">Excluir Receita</a>
+        </div>
+      </div>
+    </form>
+</div>

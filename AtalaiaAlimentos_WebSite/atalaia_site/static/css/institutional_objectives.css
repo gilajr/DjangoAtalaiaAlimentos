@@ -1,0 +1,37 @@
+
+.objectives-container .col-8 {
+    max-width: calc(33.333% - 20px); /* Define a largura máxima das colunas */
+    padding: 0;
+}
+
+
+.img-zoom {
+    transition: transform 0.5s;
+}
+
+.img-zoom:hover {
+    transform: scale(3);
+}
+
+
+.position-relative {
+    position: relative;
+}
+
+.nested-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.img-resize {
+    width: 100%; /* Define a largura da imagem como 100% */
+    height: auto; /* Mantém a proporção da altura */
+
+}
+
+/* CSS para alinhar as imagens em uma linha horizontal */
+.align-images {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre as imagens */
+}

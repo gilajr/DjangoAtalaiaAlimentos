@@ -1,0 +1,63 @@
+
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!-- recipes.html -->
+<!-- recipes.html -->
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h2 class="display-5 mb-4 mb-md-5 text-center">Receitas</h2>
+                <p class="text-center"><a href="#!" style="text-decoration: none; color: black;">Veja todas nossas receitas</a></p>
+                <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% if recipes %}
+            {% for recipe in recipes %}
+                <div class="col">
+                    <div class="flip-card" onclick="flipCard(this)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card h-100">
+                                    {% if recipe.image %}
+                                    <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                                    {% else %}
+                                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Front Image">
+                                    {% endif %}
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">{{ recipe.title }}</h5>
+                                        <p class="card-text flex-grow-1">{{ recipe.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ingredientes:</h5>
+                                        <p class="card-text">{{ recipe.ingredients | linebreaks }}</p>
+                                        <h5 class="card-title">Modo de Preparo:</h5>
+                                        <p class="card-text">{{ recipe.preparation | linebreaks }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Não temos nenhuma receita para mostrar no site. Visite nosso Instagram e confira as receitas que selecionamos para você.</p>
+        {% endif %}
+    </div>
+    <!--<p class='recipes_instagram_link'>→ Para conferir todas nossas receitas, visite nosso <a  href="https://www.instagram.com/atalaiaalimentos/" class="icon" target="_blank">instagram.</a></p>-->
+</div>
+
+<link rel="stylesheet" href="{% static 'css/last_recipes.css' %}">
+<script src="{% static 'js/flipcard.js' %}"></script>
+{% endblock %}
+

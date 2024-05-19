@@ -1,0 +1,59 @@
+<!-- templates/components/_navigation.html -->
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+    
+    <header class="header-nav">
+        <a href="#" class="logo">Logo</a>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="icons">
+            <i class='bx bx-menu' id="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </i>
+            <i class='bx bx-x' id="close-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </i>
+        </label>
+    
+        <nav class="navbar">
+            <a href="#" style="--i:0;">Produtos</a>
+            <a href="#" style="--i:1;">Institucional</a>
+            <a href="#" style="--i:2;">Trabalhe Conosco</a>
+            <a href="#" style="--i:3;">Fale Conosco</a>
+            <a href="#" style="--i:4;">Blog</a>
+        </nav>
+    <header>
+
+
+
+
+
+
+<script> 
+    $(document).ready(function () { 
+        $('.dropdown').hover(function () { 
+            $(this).addClass('show'); 
+            $(this).find('.dropdown-menu').addClass('show'); 
+        }, function () { 
+            $(this).removeClass('show'); 
+            $(this).find('.dropdown-menu').removeClass('show'); 
+        }); 
+    }); 
+</script>
+
+<style> 
+    .dropdown:hover .dropdown-menu { 
+        display: block; 
+    } 
+</style>
+
+<link rel="stylesheet" href="{% static 'css/_nav_bar.css' %}">
+<script src="{% static 'js/scrollToBottom.js' %}"></script>
+

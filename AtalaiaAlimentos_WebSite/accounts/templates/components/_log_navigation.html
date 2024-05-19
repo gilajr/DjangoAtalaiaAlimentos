@@ -1,0 +1,25 @@
+<!-- templates/components/_navigation.html -->
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'img/Logo-atalaia.png' %}">
+        </a>
+    </div>
+    <ul class="menu">
+        <!--
+        <li><a href="/">Home</a></li>
+        <li><a href="{% url 'products_list' %}">Produtos</a></li>
+        <li><a href="{% url 'trabalhe_conosco' %}">Trabalhe Conosco</a></li>
+        <li><a href="#" onclick="scrollToBottom()">Contato</a></li>
+        <li><a href="#">Blog</a></li>
+        -->
+    </ul>
+</nav>
+
+<link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+<script src="{% static 'js/scrollToBottom.js' %}"></script>

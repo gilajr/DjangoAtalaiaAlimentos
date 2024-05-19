@@ -1,0 +1,48 @@
+/* Estilos para o formulário de login */
+
+.login-form-container {
+    padding-top: 6%;
+}
+
+
+
+/* Ajuste para dispositivos pequenos */
+@media (max-width: 576px) {
+    .text-bg-primary {
+      text-align: center;
+    }
+  }
+  
+  /* Ajuste para dispositivos médios e grandes */
+  @media (min-width: 576px) {
+    .text-endx {
+      text-align: right;
+    }
+  }
+  
+  /* Alinhamento vertical */
+  .card {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilos para o formulário dentro do cartão */
+  .card-body {
+    width: 100%; /* Garante que o formulário ocupe todo o espaço disponível */
+  }
+  
+  /* Ajuste para dispositivos pequenos */
+  @media (max-width: 576px) {
+    .form-floating {
+      width: 100%;
+    }
+  }
+  
+  /* Ajuste para dispositivos médios e grandes */
+  @media (min-width: 576px) {
+    .form-floating {
+      width: 80%; /* Ajuste de largura para melhor visualização */
+      margin: 0 auto; /* Centraliza horizontalmente */
+    }
+  }
+  

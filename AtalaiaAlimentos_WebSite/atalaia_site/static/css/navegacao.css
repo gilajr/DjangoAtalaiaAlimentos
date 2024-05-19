@@ -1,0 +1,262 @@
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    box-shadow: 3px 3px 5px  rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.menubar {
+    width: 100%;
+    list-style: none;
+    display: flex; /* Certifique-se de adicionar display: flex */
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 60px;
+}
+
+.menubar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: .5s;
+  }
+  
+.menubar:hover:after{
+    left: 100%;
+  }
+  
+.menubar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+  }
+
+.menubar li {
+    height: 50px;
+}
+
+.menubar a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: brown;
+}
+
+.menubar a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.menubar .logo {
+    margin-right: auto;
+  }
+  
+  .menubar .logo img {
+    width: 150px;
+    padding-top: 8%;
+  }
+
+  .side-logo img {
+    align-items: center;
+    width: 150px;
+    margin-left: 10%;
+    padding-top: 2% !important
+  }
+
+.menubar li:first-child {
+    margin-right: auto;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons .icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: brown;
+    cursor: pointer;
+    display: none;
+}
+
+
+.social-icons .enter_button {
+    padding: 10px 20px;          /* Adiciona preenchimento ao botão */
+    background-color: brown;   /* Cor de fundo do botão */
+    color: white;                /* Cor do texto do botão */
+    border: none;                /* Remove a borda */
+    border-radius: 5px;          /* Bordas arredondadas */
+    text-decoration: none;       /* Remove a sublinhado */
+    display: inline-block;       /* Garante que o botão seja exibido corretamente */
+    font-size: 16px;             /* Tamanho da fonte */
+    cursor: pointer;             /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s ease; /* Animação suave na mudança de cor */
+}
+
+.side-social-icons .enter_button {
+    padding: 10px 10px;          /* Adiciona preenchimento ao botão */
+    background-color: brown;   /* Cor de fundo do botão */
+    color: white;                /* Cor do texto do botão */
+    border: none;                /* Remove a borda */
+    border-radius: 5px;          /* Bordas arredondadas */
+    text-decoration: none;       /* Remove a sublinhado */
+    display: inline-block;       /* Garante que o botão seja exibido corretamente */
+    font-size: 16px;             /* Tamanho da fonte */
+    cursor: pointer;             /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s ease; /* Animação suave na mudança de cor */
+}
+
+.social-icons .enter_button:hover {
+    background-color: red;   /* Cor de fundo ao passar o mouse */
+    color: white;
+}
+
+.side-social-icons .enter_button:hover {
+    background-color: red;   /* Cor de fundo ao passar o mouse */
+    color: white;
+}
+
+.social-icons .enter_button:active {
+    background-color: #003f7f;   /* Cor de fundo ao clicar */
+}
+
+.side-social-icons .enter_button:active {
+    background-color: #003f7f;   /* Cor de fundo ao clicar */
+}
+
+.social-icons .enter_button:focus {
+    outline: none;               /* Remove o contorno padrão */
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Adiciona sombra para foco */
+}
+
+.side-social-icons .enter_button:focus {
+    outline: none;               /* Remove o contorno padrão */
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Adiciona sombra para foco */
+}
+
+.menu-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(50px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;  
+    list-style: none; 
+}
+
+
+.menu-sidebar ul {
+    list-style: none;
+    text-decoration: none;
+    align-items: center;
+}
+
+
+.menu-sidebar .ul-menu-bar {
+    align-items: center;
+    padding-top: 80px;
+    padding-left: 33%;
+}
+
+.menu-sidebar li {
+    width: 100%;
+    height: 30px;
+}
+
+.menu-sidebar a {
+    width: 100%;
+    color: brown;
+    text-decoration: none;
+}
+
+.menu-sidebar a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.menu-sidebar .dropdown-menu {
+    position: absolute;
+}
+
+.menu-sidebar .dropdown-menu .dropdown-item {
+    width: 100%;
+}
+
+.hideOnDesktop {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+
+    .hideOnDesktop {
+        display: block;
+    }
+
+    .hideOnMobile {
+        display: none;
+    }
+
+    .side-logo {
+        padding-right: 15%;
+    }
+
+    .menubar .side-logo img {
+        width: 150px;
+    }
+
+    .social-icons {
+        display: none;
+    }
+        
+}
+
+@media (max-width: 500px) {
+    .menu-sidebar {
+        width: 100%;
+    }
+
+    .menu-sidebar .ul-menu-bar {
+        align-items: center;
+        padding-top: 80px;
+        padding-left: 30%;
+    }
+}
+
+@media (max-width: 390px) {
+    .menubar .logo {
+        align-items: center;
+      }
+}
+
+

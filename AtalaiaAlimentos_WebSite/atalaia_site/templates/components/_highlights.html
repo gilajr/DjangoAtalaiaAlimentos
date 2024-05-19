@@ -1,0 +1,54 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!-- Service 6 - Bootstrap Brain Component -->
+<!-- Service 6 - Bootstrap Brain Component -->
+<section class="bsb-service-6 py-5 py-xl-8">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h2 class="display-5 mb-4 mb-md-5 text-center">Destaques da Atalaia Alimentos</h2>
+                <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+            </div>
+        </div>
+    </div>
+
+    <div class="container overflow-hidden">
+        <div class="row gy-4 gy-md-0 gx-xxl-5">
+            <div class="col-12 col-md-4">
+                <div class="card bg-transparent border-primary rounded-0">
+                    <div class="card-body">
+                        <a href="#"><img src="{% static 'img/Compromisso com a qualidade.png' %}" class="img-fluid" alt="Imagem do Compromisso com a Qualidade"></a>
+                        <h3 class="h2 mb-4 text-center smaller-font" style="font-size: 1.5rem;">Compromisso com a Qualidade</h3>
+                        <p class="mb-4 text-secondary">Garantimos frangos de alta qualidade, seguindo padrões rigorosos de abate e processamento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card bg-transparent border-primary rounded-0">
+                    <div class="card-body">
+                        <img src="{% static 'img/Atalaia Processamento.png' %}" class="img-fluid" alt="Imagem de Inovação e Tecnologia">
+                        <h3 class="h2 mb-4 text-center smaller-font" style="font-size: 1.5rem;">Inovação e Tecnologia</h3>
+                        <p class="mb-4 text-secondary">Investimos em tecnologia de ponta para eficiência nos processos de abate, proporcionando produtos inovadores que atendem às necessidades dos clientes.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Novos cards -->
+            <div class="col-12 col-md-4">
+                <div class="card bg-transparent border-primary rounded-0">
+                    <div class="card-body">
+                        <img src="{% static 'img/prod-1.jpeg' %}" class="img-fluid" alt="Imagem de Variedades de Produtos">
+                        <h3 class="h2 mb-4 text-center smaller-font" style="font-size: 1.5rem;">Variedade de Produtos</h3>
+                        <p class="mb-4 text-secondary">Oferecemos uma ampla gama de produtos derivados de frangos, desde cortes tradicionais até opções processadas e prontas para consumo.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim dos novos cards -->
+        </div>
+    </div>
+</section>
+
+  <link rel="stylesheet" href="{% static 'css/highlights.css' %}">
+

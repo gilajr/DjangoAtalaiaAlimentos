@@ -1,0 +1,94 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% comment %} 
+{% include 'components/_prod_carousel.html' %} {% endcomment %}
+
+<div class="prod-section-container" style="overflow-x: hidden">
+    <h2 class="display-5 mb-4 mb-md-5 text-center" style="font-size: 2rem; padding-top:3%;">Catálogo de Produtos</h2>
+    <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+    <div class='product-frame'>
+        <form method="GET" action="{% url 'products_list' %}">
+            <input type="text" name="search" placeholder="Buscar produto...">
+            <button type="submit">Buscar</button>
+        </form>
+        <div class="prod-grid-container">
+            <div class="row product">
+                {% if products %}
+                    {% for product in products %}
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="ccc">
+                                    {% if product.image %}
+                                        <p class="text-center"><img src="{{ product.image.url }}" class="imw" alt="{{ product.product }} - {{ product.category }}"></p> 
+                                    {% else %}
+                                        <p class="no-image">Imagem não disponível.</p>
+                                    {% endif %}
+                                    <div class="overlay">
+                                        <div class="text prod-detail-link"><a href="{% url 'product_detail' product.pk %}">Ver Detalhes</a></div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-center">{{ product.product }}</h5> 
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="no-results">Nenhum produto encontrado.</p>
+                {% endif %}
+            </div>
+        </div>
+        {% if is_paginated %}
+            <nav class="d-flex justify-content-center">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Anterior</a>
+                        </li>                    
+                    {% endif %}
+                    {% for page in page_obj.paginator.page_range %}
+                       {% if page == page_obj.number %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ page }}</span>
+                            </li>
+                       {% else %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{{ page }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Próximo</a>
+                        </li>
+                    {% endif %}
+                </ul>                
+            </nav>
+        {% endif %}
+    </div>
+</div>
+
+<div class="fab-container fab-whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=3299780530" class="fab" title="Abrir conversa no WhatsApp">
+      <img src="{% static 'img/whatsapp.png' %}" alt="Ícone de WhatsApp" class="whatsapp-icon">
+    </a>
+</div>
+  
+
+<style>
+    .fab-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-icon {
+        width: 80px;
+        height: 80px;
+      }
+    
+</style>
+
+<link rel="stylesheet" href="{% static 'css/prod.css' %}">

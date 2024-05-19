@@ -1,0 +1,59 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!-- About 1 - Bootstrap Brain Component -->
+<section class="py-3 py-md-5">
+  <div class="container mt-5">
+    <div class="row">
+      <img src="{% static 'img/trabalhe_conosco.png' %}" alt="Faça parte de nossa equipe" class="center">
+      <div class="col-md-12">
+        <h2 class="text-center mb-4">Trabalhe Conosco</h2>
+        <p class="text-justify">Nós da Atalaia Alimentos separamos este espaço exclusivo para este momento tão importante para sua carreira profissional.</p>
+        <!--<p class="text-justify">Então, caso você tenha interesse em participar das nossas seleções, preencha o formulário abaixo e anexe seu currículo atualizado para que o nosso time de recursos humanos possa entrar em contato e/ou clique no botão abaixo.</p>-->
+        <p class="text-justify">Então, caso você tenha interese em participar das nossas seleções, clique no botão abaixo e informe seus dados e envie seu currículo atualizado.</p>
+        <div class="text-center mt-3">
+          <button class="btn btn-custom">CLIQUE AQUI PARA ACESSAR NOSSAS VAGAS</button>
+        </div>
+        <p class="text-justify">Agradecemos o interesse e desejamos boa sorte!</p>
+        
+        {% comment %} <hr>
+        <p class="text-justify">Informações úteis para candidatura:</p>
+        <ul class="text-justify">
+          <li>Todas as nossas vagas incluem reabilitados pelo INSS e PCD (pessoas com deficiência)</li>
+          <li>Para envio de currículos serão aceitos apenas formatos PDF, DOC (word) e DOCX até 2 MB.</li>
+          <li>Para envios via smartphone / celulares certifique de anexar o arquivo corretamente.</li>
+        </ul>
+        <hr>
+        <form action="#" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder='Seu Nome Completo' name="nome" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder='seuemail@seuemail.com.br' name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="telefone" placeholder='(xx)xxxxx-xxxx' name="telefone">
+          </div>
+          <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="mensagem" name="mensagem" placeholder='Escreva sua mensagem aqui' rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="curriculo" class="form-label">Anexar Currículo</label>
+            <input type="file" class="form-control" id="curriculo" name="curriculo" accept=".pdf,.doc,.docx" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<link rel="stylesheet" href="{% static 'css/work.css' %}">
+<script src="{% static 'js/work.js' %}"></script>

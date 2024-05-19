@@ -1,0 +1,119 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card">
+                <div class="hover_color_bubble"></div>
+                <div class="img-wrapper"><img src="{% static 'img/qualidade.png' %}" alt="Qualidade"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Qualidade</h5>
+                    <p>
+                        Nos orgulhamos de oferecer produtos mais frescos no mercado, com a garantia de entrega. Cada item em nosso catálogo é cuidadosamente selecionado e preparado para proporcionar uma experiência excepcional.
+                    </p>
+                    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="hover_color_bubble"></div>
+                <div class="img-wrapper"><img src="{% static 'img/variedade.png' %}" alt="Variedade"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Variedade</h5>
+                    <p>
+                        Aqui, você tem o poder de escolha. Oferecemos a possibilidade de selecionar o peso médio do frango ou carcfaça de acordo com suas preferências. Queremos garantir que você obtenha exatamente o que deseja, sem comprometer a qualidade.
+                    </p>
+                    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="hover_color_bubble"></div>
+                <div class="img-wrapper"><img src="{% static 'img/logistica.png' %}" alt="Logística"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Logística</h5>
+                    <p>
+                        Com frequência de entregas elevada, garantimos que seus pedidos cheguem pontualmente e com segurança.
+                    </p>
+                    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="hover_color_bubble"></div>
+                <div class="img-wrapper"><img src="{% static 'img/atendimento.png' %}" alt="Atendimento"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Atendimento</h5>
+                    <p>
+                        Valorizamos o relacionamento com nossos clientes e buscamos construir parcerias de longa data. Nosso atendimento é marcado pela cortesia, eficiência e disponibilidade para atender às suas necessidades. Estamos aqui para você, a cada passo do caminho.
+                    </p>
+                    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="hover_color_bubble"></div>
+                <div class="img-wrapper"><img src="{% static 'img/mediador.png' %}" alt="Reconhecimento"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Reconhecimento</h5>
+                        <p>
+                            Somos reconhecidos no mercado pela excepcional qualidade dos nossos produtos. Tanto os clientes quanto os consumidores finais confiam em nossa marca para proporcionar uma experiência superior.
+                        </p>
+                    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/institutional_differences - Copia.css' %}">
+<script>
+    <script>
+        const multipleCardCarousel = document.querySelector("#carouselExampleControls");
+      
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          const carousel = new bootstrap.Carousel(multipleCardCarousel, {
+            interval: false,
+          });
+      
+          const carouselWidth = multipleCardCarousel.querySelector(".carousel-inner").scrollWidth;
+          const cardWidth = multipleCardCarousel.querySelector(".carousel-item").offsetWidth;
+          let scrollPosition = 0;
+      
+          multipleCardCarousel
+            .querySelector(".carousel-control-next")
+            .addEventListener("click", () => {
+              if (scrollPosition < carouselWidth - cardWidth * 3) {
+                scrollPosition += cardWidth;
+                multipleCardCarousel.querySelector(".carousel-inner").scrollLeft = scrollPosition;
+              }
+            });
+      
+          multipleCardCarousel
+            .querySelector(".carousel-control-prev")
+            .addEventListener("click", () => {
+              if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                multipleCardCarousel.querySelector(".carousel-inner").scrollLeft = scrollPosition;
+              }
+            });
+        } else {
+          multipleCardCarousel.classList.add("slide");
+        }
+      </script>
+</script>

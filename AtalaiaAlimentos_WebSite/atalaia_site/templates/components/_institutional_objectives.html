@@ -1,0 +1,23 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<div class="container-fluid px-0 objectives-container">
+  <div class="row g-0 jigsaw-container align-items-center justify-content-center">
+    <div class="col-md-4 col-12 jigsaw-image-container jigsaw-image-first">
+      <img src="{% static 'img/missao_1.png' %}" alt="Missão" class="jigsaw-image img-zoom img-first">
+    </div>
+    <div class="col-md-4 col-12 jigsaw-image-container jigsaw-image-middle align-items-center justify-content-center">
+      <img src="{% static 'img/visao_1.png' %}" alt="Visão" class="jigsaw-image img-zoom">
+    </div>
+    <div class="col-md-4 col-12 jigsaw-image-container jigsaw-image-last align-items-center justify-content-center">
+      <img src="{% static 'img/valores_1.png' %}" alt="Valores" class="jigsaw-image img-zoom">
+    </div>
+  </div>
+</div>
+
+
+
+<link rel="stylesheet" href="{% static 'css/jigsaw.css' %}">

@@ -1,0 +1,99 @@
+
+.container {
+  padding: 5%;
+}
+
+.card {
+  background: #eee;
+  padding: 1.5em;
+  line-height: 1.5em;
+}
+
+.images {
+  flex: 1;
+}
+
+.product {
+  flex: 3;
+  padding-left: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  color: #333; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Borda arredondada */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transição suave */
+}
+
+.back-link:hover {
+  background-color: #f80000; /* Cor de fundo ao passar o mouse */
+  color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+.color {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 2em;
+  width: 2em;
+  border-radius: 2px;
+}
+
+.color:first-of-type {
+  margin-left: 0;
+}
+
+.add-to-cart,
+.like {
+  background: #ff0000;
+  padding: 1.2em 1.5em;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  transition: background .3s ease;
+}
+
+.add-to-cart:hover,
+.like:hover {
+  background: brown;
+  color: #fff;
+}
+
+.not-available {
+  text-align: center;
+  line-height: 2em;
+}
+
+.not-available:before {
+  content: "\f00d";
+  color: #fff;
+}
+
+.orange {
+  background: #ff9f1a;
+}
+
+.green {
+  background: #85ad00;
+}
+
+.blue {
+  background: #0076ad;
+}
+
+.tooltip-inner {
+  padding: 1.3em;
+}
+
+
+
+
+

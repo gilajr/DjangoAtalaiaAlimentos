@@ -1,0 +1,82 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<div class="mt-10 d-flex justify-content-center align-items-center" style="padding-top: 8%; padding-left: 2%; padding-right: 2%;">
+   <div class="row">
+        <div class="col-lg-16">
+            <article>
+                <div class="d-flex justify-content-center flex-column align-items-center">
+                    <header class="mb-4 text-center">
+                        <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+                        <div class="text-muted fst-italic mb-2">{{ post.created_on }}</div>
+                        {% for categoria in post_categories %}
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ categoria.name }}</a>
+                        {% endfor %}
+                    </header>
+
+                    {% if post.image.url %}
+                        <figure class="mb-4">
+                            <img class="img-fluid rounded" src="{{ post.image.url }}" alt="..." />
+                        </figure>
+                    {% else %}
+                        {% if post.instagram_video %}
+                            <div class="instagram-post d-flex justify-content-center align-items-center">
+                                {{ post.instagram_video|safe }}
+                            </div>
+                        {% else %}
+                            <img class="img-fluid rounded" src="{% static 'img/not_found_image.jpg' %}" class="d-block w-100" alt="...">
+                        {% endif %}
+                    {% endif %}
+                </div>
+                
+                <!-- Post content-->
+                <section class="mb-5">
+                    <div class="col-md-12 post-description" style="padding-left: 1%;">
+                        <p class="fs-5 mb-6">{{ post.body }}</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <!--Side Widgets-->
+        {% comment %} <div class="col-lg-4">
+            <!--Search Widget-->
+            <div class="card mb-4">
+                <div class="card-header">Pesquisar</div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Entre com o termo..." aria-label="Entre com o termo..." aria-describedby="button-search" />
+                        <button class="btn btn-primary" id="button-search" type="button">Ir</button>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+            <!--Categories Widget-->
+            
+            {% comment %} <div class="card mb-4">
+                <div class="card-header">Categorias</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="#!">Tecnologia</a></li>
+                                <li><a href="#!">HTML</a></li>
+                                <li><a href="#!">Freebies</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="#!">JavaScript</a></li>
+                                <li><a href="#!">CSS</a></li>
+                                <li><a href="#!">Tutorials</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <div>
+            </div> {% endcomment %}
+
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{% static 'css/post_detail.css' %}">

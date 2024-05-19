@@ -1,0 +1,12 @@
+/* Estilo para o formulário de contato */
+.contact-container {
+  padding-top: 5% !important;
+  padding-bottom: 50px;
+}
+
+.contact-container h2 {
+  font-size: 24px;
+  text-align: center;
+  white-space: nowrap;
+}
+

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <h1>Atalaia Alimentos - Saudável como a vida deve ser!</h1>
+{% endblock %}
+
+{% block content %}
+  {% include 'components/_header_carousel.html' %}
+  {% include 'components/_about.html' %}
+  {% include 'components/_highlights.html' %}
+  {% include 'components/_last_recipes.html' %}
+{% endblock %}
+

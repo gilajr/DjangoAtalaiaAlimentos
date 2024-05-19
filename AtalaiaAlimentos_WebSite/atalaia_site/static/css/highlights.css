@@ -1,0 +1,61 @@
+/* Remove as bordas e adiciona sombra aos cards */
+.card {
+    height: 100%; /* Define uma altura fixa para os cards */
+    margin-right: 3%; /* Adiciona uma margem entre os cards */
+    border: none !important; /* Remove as bordas */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Aumenta o raio da sombra */
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Adiciona espaço entre as linhas de cards */
+.row.gy-4 {
+    margin-bottom: 1rem;
+}
+
+/* Remove a margem direita do último card */
+.card:last-child {
+    margin-right: 0;
+}
+
+/* Estiliza os títulos e textos dentro dos cards */
+.card__title {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+/* Estiliza a imagem dentro dos cards */
+.card__image {
+    text-align: center; /* Centraliza a imagem */
+}
+
+.card__image img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do card */
+    max-height: 100%; /* Garante que a imagem não ultrapasse o tamanho do card */
+    display: inline-block; /* Permite centralizar verticalmente */
+    vertical-align: middle; /* Centraliza verticalmente */
+}
+
+
+/* Adaptação para dispositivos menores */
+@media (max-width: 768px) {
+    /* Define a largura total para dispositivos menores */
+    .container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Define a largura total para dispositivos menores */
+    .card {
+        width: 100%;
+        margin-right: 0;
+    }
+}

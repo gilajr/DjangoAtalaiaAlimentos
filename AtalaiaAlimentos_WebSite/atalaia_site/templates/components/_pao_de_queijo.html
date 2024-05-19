@@ -1,0 +1,81 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<div class="card_container" style="padding-top: 120px;">
+  <h2 class="display-5 mb-4 mb-md-5 text-center" style="font-size: 2rem; padding-top:3%;">Pão de Queijo Atalaia</h2>
+  <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+  <div class="card mb-3">
+    <img class="card-img-top" src="{% static 'img/banner-pao-de-queijo.jpg' %}" alt="Imagem de capa do card">
+    <div class="card-body">
+      <p class="card-text">De acordo com alguns relatos históricos o pão de Queijo surgiu em meados do século XVIII. Nessa época as cozinheiras das fazendas de Minas Gerais começaram a utilizar o polvilho em suas receitas de pães, para substituir a farinha de trigo que na época era de baixa qualidade. Adicionavam a essa farinha, ovos, leite e os queijos velhos que já estivessem duros. Depois enrolavam essa mistura e elevavam ao forno para assar. Essa iguaria era geralmente consumida após as principais refeições.</p>
+      <p class="card-text">Assim como o Pão de Queijo, mais alguns séculos depois, surgiu a Atalaia. Uma empresa 100% mineira reconhecida pela qualidade superior de seus produtos.</p>
+      <p class="card-text">Com a intenção de lançar um produto que fortalecesseas nossas raízes e evidenciasse toda a qualidade que sempre prezamos, criamos a nossa própria receita de Pão de Queijo.</p>
+      <p class="card-text">O Pão de Queijo Atalaia foi criado com muito rigor para propocionar uma experiência única para o consumidor. Para isso criamos uma receita com um  Blend de 3 Queijos: Tropical, Minas Artezanal e Provolone. Essa combinação proporciona</p>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link-pq" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Preparo na Air Fryer</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link-pq" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Preparo no Forno</button>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <h5 class="card-title">Preparo na Air Fryer</h5>
+          <div class="card mb-3">
+            <img class="card-img-top img-preparation" src="{% static 'img/na-airfryer.jpeg' %}" alt="Imagem de capa do card" style="width: 40%;height: 40%;">
+            <div class="card-body">
+              <ul class="preparation_method">
+                <li class="step">1 - Organize os pães de queijo ainda congelados no cesto da air fryer, com espaços de 3 cm entre eles;</li>
+                <li class="step">2 - Programe a sua air fryer de 15 a 30 minutos em uma temperatura entre 180ºC a 200ºC;</li>
+                <li class="step">3 - Agora sirva com um bom café e sinta os 3 queijos derreterem... huuummmm!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <h5 class="card-title">Preparo no Forno</h5>
+          <div class="card mb-3">
+            <img class="card-img-top img-preparation" src="{% static 'img/no-forno.jpeg' %}" alt="Imagem de capa do card" style="width: 40%; height: 40%;">
+            <div class="card-body">
+              <ul class="preparation_method">
+                <li class="step">1 - Organize os pães de queijo ainda congelados em uma assadeira com espaços de 3 cm entre eles.</li>
+                <li class="step">2 - Mantenha de 15 a 20 minutos na assadeira antes de colocar no forno;</li>
+                <li class="step">3 - Enquanto isso, pré-aqueça o forno a uma temperatura de aproximadamente 150ºC;</li>
+                <li class="step">4 - Coloque a assadeira com os pães de queijo no forno e agora é só esperar e se deliciar com este maravilhoso Blend de 3 Queijos!!!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/pao_de_queijo.css' %}">
+
+<script>
+var myTab = document.getElementById('myTab')
+  var myTabContent = document.getElementById('myTabContent')
+
+  myTab.addEventListener('shown.bs.tab', function (event) {
+    var target = event.target
+    var targetTab = target.dataset.bsTarget
+
+    if (targetTab) {
+      var targetPanel = document.querySelector(targetTab)
+
+      if (targetPanel) {
+        myTabContent.scrollTop = targetPanel.offsetTop
+      }
+    }
+  })
+</script>

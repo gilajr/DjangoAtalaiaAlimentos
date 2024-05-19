@@ -1,0 +1,54 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="images p-3">
+                            {% if product.image %}
+                                <div class="text-center p-4"> <img src="{{ object.image.url }}" alt="{{ object.product }} - {{ object.category }}" width="280"/> </div>
+                            {% else %}
+                                <div class="text-center p-4"><p id="no-image">Imagem não encontrada</p> </div>
+                            {% endif %}
+                        </div>
+                        <div class="images p-3">
+                            {% if product.nutricional_informations_image %}
+                                <div class="text-center p-4"> <img src="{{ object.nutricional_informations_image.url }}" alt="{{ object.product }} - {{ object.category }}" width="280"/> </div>
+                            {% else %}
+                                {% comment %} <div class="text-center p-4"><p id="no-image">Imagem não encontrada</p> </div> {% endcomment %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center" style="padding-left: 92%;">
+                                <a href="javascript:history.back()" class="back-link d-flex align-items-center"> <!-- Adicionada a classe back-link aqui -->
+                                    <i class="fa fa-long-arrow-left"></i> 
+                                    <span class="ml-1">Voltar</span> 
+                                </a>
+                            </div>
+                            <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">Atalaia Alimentos</span>
+                                <h5 class="text-uppercase" style="font-size: 1rem;">{{ product.product }} - {{ product.category }}</h5>
+                            </div>
+                            
+						    <p class="product-designation"><strong>Produto:</strong> {{ product.product }}.</p>
+                            <p class="about"><p class="product-description"><strong>Descrição:</strong> {{ product.description }}.</p></p>
+                            <p class="product-weigth"><strong>Peso:</strong> {{ object.weight }}</p>
+                            <p class="product-unity"><strong>Unidade:</strong> {{ object.unit }}</p>
+                            <p class="product-validity"><strong>Validade:</strong> {{ object.validity }}</p>
+                            <p class="product-concervation"><strong>Unidade:</strong> {{ object.conservation }}</p>
+      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">

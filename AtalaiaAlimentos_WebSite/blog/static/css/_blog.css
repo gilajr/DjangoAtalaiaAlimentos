@@ -1,0 +1,71 @@
+.section-title {
+    padding-top: 10%;
+    background-color: red;
+}
+  /* Título centralizado */
+  h2.display-5 {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Estilizando as cartas */
+  .card {
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilizando a imagem dentro da carta */
+  .card-img-left {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Estilizando o corpo da carta */
+  .card-body {
+    padding: 15px;
+    background-color: #fff;
+  }
+  
+  /* Estilizando o título da carta */
+  .card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilizando os parágrafos */
+  .card-text {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  /* Estilizando o pequeno texto */
+  .card-text small {
+    color: #999;
+  }
+  
+  /* Estilizando os botões de curtida */
+  .like-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .like-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilizando a contagem de curtidas */
+  .like-count {
+    margin-left: 10px;
+    font-size: 1.2em;
+  }
+  

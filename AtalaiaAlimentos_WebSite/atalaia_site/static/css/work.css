@@ -1,0 +1,32 @@
+/* Estilos para h2 */
+h2 {
+  color: brown;
+}
+
+/* Estilos para a classe .lead */
+.lead {
+  font-size: 1.25rem;
+}
+
+/* Estilos para a classe .form-label */
+.form-label {
+  font-weight: bold;
+}
+
+/* Estilos para o botão personalizado */
+.btn-custom {
+  background-color: brown;
+  border: 20px solid brown;
+  border-radius: 20px;
+  padding: 10px 20px;
+  padding-bottom: 20px;
+  color: black; /* Cor inicial do texto dentro do botão */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: brown;
+  border-color: brown;
+  color: white !important;
+}
+

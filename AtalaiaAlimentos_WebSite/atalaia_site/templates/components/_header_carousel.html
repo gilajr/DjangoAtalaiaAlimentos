@@ -1,0 +1,29 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<div class="header-carousel">
+    <div id="carouselExampleSlidesOnly" class="carousel slide carrousel-slider" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/Saudável como a vida deve ser! (5).png' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/Saudável como a vida deve ser! (8).png' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/Saudável como a vida deve ser! (7).png' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/Saudável como a vida deve ser! (9).png' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/Saudável como a vida deve ser! (10).png' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/header_carousel.css' %}">
+<script src="{% static 'js/carousel.js' %}"></script>

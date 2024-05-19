@@ -1,0 +1,89 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<div class="form-container justify-content-center" style="padding-left: 15%;">
+    <form class="form-horizontal" id="product-register-form" method="post" enctype="multipart/form-data" action="{% url 'product_maintenance' %}">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Título da Receita:</label>
+            <div class="col-sm-11">
+              <input type="text" name="{{ new_recipe_form.recipe.title }}" id="{{ new_recipe_formtitle.id_for_label }}" value="{{ new_recipe_formtitle.value }}" class="form-control">
+              {{ new_recipe_form.title.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Imagem:</label>
+            <div class="col-sm-8">
+              {{ new_recipe_form.image }}
+              {{ new_recipe_form.image.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-4">Tempo de Preparo:</label>
+            <div class="col-sm-10">
+              <input type="text" name="{{ new_recipe_form.recipe.time }}" id="{{ new_recipe_formtitle.id_for_label }}" value="{{ new_recipe_formtitle.value }}" class="form-control">
+              {{ new_recipe_form.time.errors }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Rendimento:</label>
+            <div class="col-sm-10">
+              <input type="text" name="{{ new_recipe_form.recipe.revenue }}" id="{{ new_recipe_formtitle.id_for_label }}" value="{{ new_recipe_formtitle.value }}" class="form-control">
+              {{ new_recipe_form.time.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Descrição:</label>
+            <div class="col-sm-11">
+              <textarea name="{{ new_recipe_form.recipe.description }}" id="{{ new_recipe_form.recipe.id_for_label }}" class="form-control" rows="2">{{ selected_recipe.description }}</textarea>
+              {{ new_product_form.description.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Ingredientes:</label>
+            <div class="col-sm-11">
+              <textarea name="{{ new_recipe_form.recipe.ingredients }}" id="{{ new_recipe_form.recipe.id_for_label }}" class="form-control" rows="2">{{ selected_recipe.description }}</textarea>
+              {{ new_product_form.ingredients.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Modo de Preparo:</label>
+            <div class="col-sm-11">
+              <textarea name="{{ new_recipe_form.recipe.preparation }}" id="{{ new_recipe_form.recipe.id_for_label }}" class="form-control" rows="2">{{ selected_recipe.description }}</textarea>
+              {{ new_product_form.preparation.errors }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding-left: 35%; padding-top: 10%;">
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary rounded-3 text-center">Cadastrar Receita</button>
+        </div>
+      </div>
+    </form>
+  </div>

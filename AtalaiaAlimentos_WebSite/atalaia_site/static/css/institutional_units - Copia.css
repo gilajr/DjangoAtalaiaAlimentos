@@ -1,0 +1,27 @@
+/* Estilo para o cabeçalho das unidades */
+.stats-item h1 {
+    font-size: 2rem;
+    color: #ff3e6c; /* Vermelho forte */
+}
+
+/* Estilo para os cards */
+.card {
+    background-color: #ffffff; /* Cor de fundo dos cards */
+    border-color: #ff3e6c; /* Cor da borda dos cards */
+}
+
+/* Estilo para o texto dos cards */
+.card-body {
+    color: #6c757d; /* Cor do texto dos cards */
+}
+
+/* Estilo para os ícones dos cards */
+.card-icon svg {
+    fill: #ff3e6c; /* Cor dos ícones dos cards */
+}
+
+/* Estilo para os títulos dos cards */
+.card-body h4 {
+    color: #343a40; /* Cor dos títulos dos cards */
+}
+

@@ -1,0 +1,127 @@
+<div class="form-container justify-content-center" style="padding-left: 15%;">
+  <form class="form-horizontal" id="product-edit-form" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row">
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="control-label col-sm-6">Categoria do Produto:</label>
+                  <div class="col-sm-8">
+                      <select name="category" id="id_category" class="form-control">
+                          {% for choice in category_choices %}
+                              <option value="{{ choice.0 }}" {% if choice.0 == selected_product.category %} selected {% endif %}>{{ choice.1 }}</option>
+                          {% endfor %}
+                      </select>
+                      {{ new_product_form.category.errors }}
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="control-label col-sm-4">Produto:</label>
+                  <div class="col-sm-8">
+                      <input type="text" name="product" id="id_product" value="{{ selected_product.product }}" class="form-control">
+                      {{ new_product_form.product.errors }}
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="form-group">
+                  <label class="control-label col-sm-2">Descrição:</label>
+                  <div class="col-sm-10">
+                      <textarea name="description" id="id_description" class="form-control" rows="2">{{ selected_product.description }}</textarea>
+                      {{ new_product_form.description.errors }}
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="control-label col-sm-4">Peso:</label>
+                  <div class="col-sm-8">
+                      <input type="text" name="weight" id="id_weight" value="{{ selected_product.weight }}" class="form-control">
+                      {{ new_product_form.weight.errors }}
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="control-label col-sm-4">Unidade:</label>
+                  <div class="col-sm-8">
+                      <input type="text" name="unit" id="id_unit" value="{{ selected_product.unit }}" class="form-control">
+                      {{ new_product_form.unit.errors }}
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="control-label col-sm-4">Validade:</label>
+                  <div class="col-sm-8">
+                      <input type="text" name="validity" id="id_validity" value="{{ selected_product.validity }}" class="form-control">
+                      {{ new_product_form.validity.errors }}
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="control-label col-sm-4">Conservação:</label>
+                  <div class="col-sm-8">
+                      <input type="text" name="conservation" id="id_conservation" value="{{ selected_product.conservation }}" class="form-control">
+                      {{ new_product_form.conservation.errors }}
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-8">
+              <div class="form-group">
+                  <label class="control-label col-sm-4">Imagem do Produto:</label>
+                  <div class="col-sm-12">
+                      {% if selected_product.image %}
+                          <img src="{{ selected_product.image.url }}" alt="Imagem do Produto" class="img-thumbnail" style="max-width: 200px;">
+                          <p>Nome do Arquivo: {{ selected_product.image.name }}</p>
+                          <p>Tamanho: {{ selected_product.image.size|filesizeformat }}</p>
+                      {% else %}
+                          <p>Sem imagem</p>
+                      {% endif %}
+                      <!-- Campo de upload de nova imagem -->
+                      <input type="file" name="image" id="id_image" class="form-control">
+                      {{ new_product_form.image.errors }}
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-8">
+              <div class="form-group">
+                  <label class="control-label col-sm-6">Informações Nutricionais:</label>
+                  <div class="col-sm-12">
+                      {% if selected_product.nutricional_information_image %}
+                          <img id="previewImage" src="{{ selected_product.nutricional_information_image.url }}" alt="Informações Nutricionais" class="img-thumbnail" style="max-width: 200px;">
+                          <p>Nome do Arquivo: {{ selected_product.nutricional_information_image.name }}</p>
+                          <p>Tamanho: {{ selected_product.nutricional_information_image.size|filesizeformat }}</p>
+                      {% else %}
+                          <p>Sem imagem</p>
+                      {% endif %}
+                      <!-- Campo de upload de nova imagem -->
+                      <input type="file" name="image_nutritional" id="id_image_nutritional" class="form-control" onchange="previewImage(event)">
+                      {{ new_product_form.nutricional_informations_image.errors }}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+<div class="row justify-content-center" style="padding-top: 5%;">
+  <div class="col-2">
+      <button type="submit" class="btn btn-primary rounded-3 text-center">Atualizar Produto</button>
+  </div>
+  <div class="col-2">
+      <a href="#" class="btn btn-danger rounded-3 text-center">Excluir Produto</a>
+  </div>
+</div>
+

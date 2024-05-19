@@ -1,0 +1,39 @@
+.header-carousel {
+  overflow: hidden; /* Evita que os slides ultrapassem o container */
+  margin: 0; /* Remove margens superior e inferior */
+  padding-top: 85px; /* Adiciona espaço acima do carousel */
+}
+
+.carousel-inner {
+  margin: 0; /* Remove margens superior e inferior */
+  padding: 0; /* Remove preenchimento superior e inferior */
+}
+
+.carousel-item {
+  height: 40%; /* Altura padrão do carousel */
+  background-position: center center; /* Centraliza as imagens de fundo */
+  background-size: cover; /* Garante que as imagens cubram todo o slide */
+}
+
+.carousel-item img {
+  display: none; /* Esconde as imagens originais */
+}
+
+.carousel-caption {
+  /* Estilo opcional para as legendas do carousel */
+  left: 15%;
+  right: 15%;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 780px) {
+  .header-carousel {
+      padding-top: 85px; /* Reduz o espaço acima do carousel em telas menores */
+  }
+}
+
+
+

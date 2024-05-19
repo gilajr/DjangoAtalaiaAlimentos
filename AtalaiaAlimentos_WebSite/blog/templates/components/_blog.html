@@ -1,0 +1,87 @@
+{% load static %}
+{% load bootstrap5 %}
+
+{% block content %}
+<section class="blog-posts" style="padding-top: 7%;">
+  <div class="container mt-10">
+      <div class="row justify-content-center">
+        <div class="col-md-15">
+          <div class="card">
+            <img src="{% static 'img/Politica.png' %}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h2 class="card-title text-center mb-4">BLOG ATALAIA ALIMENTOS</h2>
+              <hr>
+              {% if posts %}
+                {% for post in posts %}
+                    <div class="card mb-3" style="max-width: 100%;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <a href="{% url 'post' post.pk %}"><img src="{{ post.image.url }}" alt="Image" class="card-img-left"></a>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title text-center">{{ post.title }}</h5>
+                            <p class="card-text" style="text-decoration: none;">{{ post.body|truncatewords:30 }}</p>
+                          </div>
+                          <div class="card-footer bg-white d-flex justify-content-between border-0">
+                            <div class="card-text">
+                                <p class="card-text">
+                                    <small class="text-muted">{{ post.created_on }}</small>
+                                </p>
+                            </div>
+                            <a href="{% url 'post' post.pk %}" class="text-decoration-none" aria-label="Ver detalhes do post">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-earmark-richtext" viewBox="0 0 16 16">
+                                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                                    <path d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5m1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208M6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5"/>
+                                </svg> Ler mais
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
+              {% else %}
+                <p>Nosso blog não tem nenhuma postagem ainda!</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Paginação -->
+  {% if is_paginated %}
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+              </li>
+            {% endif %}
+            {% for page in page_obj.paginator.page_range %}
+              {% if page_obj.number == page %}
+                <li class="page-item active" aria-current="page">
+                  <span class="page-link">{{ page }}</span>
+                </li>
+              {% else %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Próximo</a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/_blog.css' %}">

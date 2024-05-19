@@ -1,0 +1,27 @@
+{% load static %}
+{% load bootstrap5 %}
+
+{% if mostrar_alerta %}
+    <div class="fab-container privacy-alert-container" style="z-index: 9999;">
+        <div class="privacy-card" style="width: 18rem;">
+            <h5 class="card-title">Termos de Uso e Políticas de Privacidade</h5>
+            <p class="card-text">Ao navegar neste site, você aceita os cookies que usamos para melhorar sua experiência.</p>
+            <a href="#" class="card-link">Termos de Uso</a>
+            <a href="#" class="card-link">Política de Privacidade</a>
+            <button id="acept-terms" class="btn btn-primary">Aceitar</button>
+        </div>
+    </div>
+{% endif %}
+
+<style>
+    .fab-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
+    
+    .privacy-card {
+        width: 18rem;
+    }
+</style>

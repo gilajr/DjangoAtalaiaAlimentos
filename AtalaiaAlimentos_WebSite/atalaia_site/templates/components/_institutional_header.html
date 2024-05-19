@@ -1,0 +1,28 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!-- About 1 - Bootstrap Brain Component -->
+<section class="py-3 py-md-5">
+    <div class="container">
+        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+            <div class="col-12 col-lg-6 col-xl-5">
+                <img class="img-fluid img-about rounded" loading="lazy" src="{% static 'img/abatedouro.png' %}" alt="About 1">
+            </div>
+            <div class="col-12 col-lg-6 col-xl-7">
+                <div class="row justify-content-xl-center">
+                    <div class="col-12 col-xl-11">
+                        <h2 class="mb-3 text-center">Atalaia Alimentos</h2>
+                        <p class="lead fs-4 text-secondary mb-3">Produtos Livres de Hormônios com o sabor tradicional da culinária brasileira.</p>
+                        <p class="mb-5 text-justify">
+                            A Atalaia Alimentos, fundada em 1987, começou como uma empresa de abate e venda de frangos e seus derivados. Ao longo de 36 anos, cresceu e formou o Grupo Atalaia, composto por diversas fazendas dedicadas à produção agrícola e pecuária. O grupo se compromete com o progresso da região onde opera, preservando o meio ambiente e promovendo o crescimento sustentável. A empresa emprega aproximadamente 750 colaboradores e mantém parceria com 51 granjas integradas, contribuindo para a estabilidade econômica da região. Seu abatedouro ocupa uma área de 31310m² e atende principalmente redes varejistas de alimentos, além de restaurantes e hospitais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="{% static 'css/institutional_header.css' %}">

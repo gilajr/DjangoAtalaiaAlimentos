@@ -1,0 +1,19 @@
+/* Defina os estilos para os elementos necessários */
+
+.container-fluid img {
+  width: 100%;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.card img {
+  max-width: 200px;
+}
+
+/* Estilos adicionais conforme necessário */
